@@ -1,8 +1,8 @@
-const fs = require('fs');
-const text_input = require('./utils/loadText.js');
+const fs1 = require('fs');
+const text_input1 = require('../utils/loadText.js');
 
 
-const day1_data = text_input.getInputArray('day1input.txt');
+const day1_data = text_input1.getInputArray('day1input.txt');
 
 
 let current = 0;
