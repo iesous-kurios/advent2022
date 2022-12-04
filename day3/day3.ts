@@ -1,19 +1,26 @@
-var fs3 = require('fs');
-// What would your total score be if everything goes exactly according to your 
-// strategy guide?
-const text_input3 = require('../utils/loadText.js');
+const fs3 = require('fs');
 
-// read the input file into array of strings
-const day3_data = fs3.readFileSync('../day3input.txt', 'utf8').split('\n');
+const input = fs3.readFileSync('../day3input.txt', 'utf8');
+const inputArray = input.split('\n');
 
-for (let i = 0; i < day3_data.length; i++) {
-    const firstHalf = day3_data[i].slice(0, day3_data[i].length / 2);
-    const secondHalf = day3_data[i].slice(day3_data[i].length / 2, day3_data[i].length);
-    for (let j = 0; j < firstHalf.length; j++) {
-        if (firstHalf[j] === secondHalf[j]) {
-            console.log('match');
-            console.log(firstHalf[j]);
-            console.log(secondHalf[j]);
-        }
-    } 
-}
+const priorities = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const chars: string[] = [];
+let score = 0;
+
+inputArray.forEach((line) => {
+	const first = line.slice(0, line.length / 2);
+	const second = line.slice(line.length / 2, line.length);
+
+	for (const c of first) {
+		if (second.includes(c)) {
+			chars.push(c);
+			break;
+		}
+	}
+});
+
+chars.forEach((c) => {
+	score += priorities.indexOf(c) + 1;
+});
+
+console.log(score);
