@@ -1,7 +1,6 @@
 var fs2 = require('fs');
 // What would your total score be if everything goes exactly according to your 
 // strategy guide?
-var text_input2 = require('../utils/loadText.js');
 // read the input file into array of strings
 var day2_data = fs2.readFileSync('../day2input.txt', 'utf8').split('\n');
 var challengerOptions = {

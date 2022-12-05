@@ -3,8 +3,7 @@ var fs2 = require('fs');
 // strategy guide?
 const text_input2 = require('../utils/loadText.js');
 
-// read the input file into array of strings
-const day2_data = fs2.readFileSync('../day2input.txt', 'utf8').split('\n');
+const day2_data = text_input2.getInputArray('day2input.txt');
 
 const challengerOptions = {
     'A': 'Rock',

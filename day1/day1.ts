@@ -1,4 +1,4 @@
-const fs1 = require('fs');
+const fs = require('fs');
 const text_input1 = require('../utils/loadText.js');
 
 
